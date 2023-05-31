@@ -25,7 +25,7 @@ namespace Casus_klasse
         public DateTime StartDatum { get; set; }
         public DateTime EindDatum { get; set; }
 
-        public TaakToevoegen()
+        public TaakToevoegen() 
         {
             return;
         }
@@ -34,9 +34,9 @@ namespace Casus_klasse
         {
             return;
         }
-        public SaveProject()
+        public SaveProject()   //controleren of alle data aanwezig is van het project
         {
-            return;
+            return;  //hoeft niet perse een return waarde te hebben, kan ook een mssgbox openen
         }
         public OpenProject()
         {
@@ -56,8 +56,13 @@ namespace Casus_klasse
                  
             }
 
+            public OpenTaak()
+            { 
+            
 
-            public AddTaak()
+            }
+
+            public SaveTaak()
             {
                 return;
             }
@@ -67,43 +72,7 @@ namespace Casus_klasse
             }
         }
 
-        public class Bestand
-        {
-            public OpenBestand()
-            {
-
-                return;
-            }
-            public SluitBestand()
-            {
-
-                return;
-            }
-            public SaveBestand()
-            {
-
-                return;
-            }
-            public DeleteBestand()
-            {
-
-                return;
-            }
-
-        }
-        public class Data
-        {
-            public ReadData()
-            {
-                return;
-            }
-            public SaveData()
-            {
-                return;
-            }
-
-
-        }
+      
 
     }
 }

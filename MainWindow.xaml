@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Casus_klasse"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Plan Matig! Takenplanner" Height="450" Width="800" ResizeMode="NoResize"   >
+    
     <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Project">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open" />
+                    <MenuItem Header="_Save" />
+                </MenuItem>
+                <MenuItem Header="_Taken">
+                    <MenuItem Header="_Toevoegen" />
+                </MenuItem>
+                <MenuItem Header="_Personeel">
+                    <MenuItem Header="_Toevoegen" />
+            </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+
 
     </Grid>
 </Window>
