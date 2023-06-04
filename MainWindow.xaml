@@ -6,25 +6,80 @@
         xmlns:local="clr-namespace:Casus_klasse"
         mc:Ignorable="d"
         Title="Plan Matig! Takenplanner" Height="450" Width="800" ResizeMode="NoResize"   >
+
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="NewCommand_Executed" CanExecute="NewCommand_CanExecute" />
+        <CommandBinding Command="ApplicationCommands.Open" Executed="OpenCommand_Executed" CanExecute="OpenCommand_CanExecute" />
+
+    </Window.CommandBindings>
+
+    
     
     <Grid>
-        <DockPanel>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"    />
+
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="317*"  />
+
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="2" >
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_Project">
-                    <MenuItem Header="_New" />
-                    <MenuItem Header="_Open" />
-                    <MenuItem Header="_Save" />
+                    <MenuItem Header="_Nieuw" Command="ApplicationCommands.New" />
+                    <MenuItem Header="_Open" Command="ApplicationCommands.Open" />
+                    <MenuItem Header="_Opslaan" />
+                    <MenuItem Header="_Opslaan Als.." />
+
                 </MenuItem>
                 <MenuItem Header="_Taken">
                     <MenuItem Header="_Toevoegen" />
                 </MenuItem>
-                <MenuItem Header="_Personeel">
+                <MenuItem Header="_Personeel"  >
                     <MenuItem Header="_Toevoegen" />
-            </MenuItem>
+                </MenuItem>
             </Menu>
-            <TextBox AcceptsReturn="True" />
-        </DockPanel>
 
+        </DockPanel>
+        <Grid Grid.Column="1" Grid.Row="1" Margin="10,10,30,10" >
+
+        
+
+
+
+            <Grid.RowDefinitions>
+             
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
 
     </Grid>
+    
 </Window>

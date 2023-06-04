@@ -25,16 +25,19 @@ namespace Casus_klasse
         public DateTime StartDatum { get; set; }
         public DateTime EindDatum { get; set; }
 
-        public TaakToevoegen() 
+/*        public TaakToevoegen()
         {
             return;
-        }
+        }*/
 
-        public NieuwProject()
+  /*      public NieuwProject()
         {
+           
+
+
             return;
-        }
-        public SaveProject()   //controleren of alle data aanwezig is van het project
+        }*/
+/*        public SaveProject()   //controleren of alle data aanwezig is van het project
         {
             return;  //hoeft niet perse een return waarde te hebben, kan ook een mssgbox openen
         }
@@ -44,21 +47,21 @@ namespace Casus_klasse
         }
         public DeleteProject()
         {
-            return;
+            return;*/
         }
 
-        public class Taak
-       {
+/*        public class Taak
+        {
             public int TaakNummer;
 
             public void VoegPersoneelToe()
             {
-                 
+
             }
 
             public OpenTaak()
-            { 
-            
+            {
+
 
             }
 
@@ -69,12 +72,13 @@ namespace Casus_klasse
             public DeleteTaak()
             {
                 return;
-            }
+            }*/
         }
 
       
 
-    }
-}
+    
+
+
 
 
