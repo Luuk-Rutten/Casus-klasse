@@ -7,50 +7,27 @@ using System.Xml;
 
 namespace Casus_klasse
 {
-    internal class Models
+    public class Models
     {
-    }
 
-    public class Personeel
-    {
-        public string naam;
-        public string? functie;
-        public int ID;
-
-    }
-
-    public class Project
-    {
-        public string ProjectNaam { get; set; }
-        public DateTime StartDatum { get; set; }
-        public DateTime EindDatum { get; set; }
-
-/*        public TaakToevoegen()
+        public class Personeel
         {
-            return;
-        }*/
+            public string naam { get; set;  }
+            public string? functie { get; set; }
+            public int ID { get; set; }
 
-  /*      public NieuwProject()
-        {
-           
-
-
-            return;
-        }*/
-/*        public SaveProject()   //controleren of alle data aanwezig is van het project
-        {
-            return;  //hoeft niet perse een return waarde te hebben, kan ook een mssgbox openen
-        }
-        public OpenProject()
-        {
-            return;
-        }
-        public DeleteProject()
-        {
-            return;*/
         }
 
-/*        public class Taak
+        public class Project
+        {
+            public string ProjectNaam { get; set; }
+            //public DateTime StartDatum { get; set; }
+            //public DateTime EindDatum { get; set; }
+            //public List<Personeel>? LinkedPersoneel { get; set; } 
+            //public List<Taak>? Taken { get; set; }
+
+        }
+        public class Taak
         {
             public int TaakNummer;
 
@@ -59,21 +36,49 @@ namespace Casus_klasse
 
             }
 
-            public OpenTaak()
+            public void OpenTaak()
             {
 
 
             }
 
-            public SaveTaak()
+            public void SaveTaak()
             {
-                return;
+                
             }
-            public DeleteTaak()
+            public void DeleteTaak()
+            {
+               
+            }
+        }
+    }
+
+    /*        public TaakToevoegen()
             {
                 return;
             }*/
-        }
+
+    /*      public NieuwProject()
+          {
+
+
+
+              return;
+          }*/
+    /*        public SaveProject()   //controleren of alle data aanwezig is van het project
+            {
+                return;  //hoeft niet perse een return waarde te hebben, kan ook een mssgbox openen
+            }
+            public OpenProject()
+            {
+                return;
+            }
+            public DeleteProject()
+            {
+                return;*/
+}
+ 
+
 
       
 
