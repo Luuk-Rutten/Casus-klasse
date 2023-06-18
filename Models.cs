@@ -21,6 +21,8 @@ namespace Casus_klasse
         public class Project
         {
             public string ProjectNaam { get; set; }
+            public string ProjectBeschrijving { get; set; }
+
             //public DateTime StartDatum { get; set; }
             //public DateTime EindDatum { get; set; }
             //public List<Personeel>? LinkedPersoneel { get; set; } 
@@ -29,7 +31,10 @@ namespace Casus_klasse
         }
         public class Taak
         {
-            public int TaakNummer;
+            public int TaakNummer;                                //TODO Luuk
+            //public DateTime StartDatum { get; set; }
+            //public DateTime EindDatum { get; set; }
+            //lijst van personeel per taak
 
             public void VoegPersoneelToe()
             {

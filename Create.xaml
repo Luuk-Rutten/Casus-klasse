@@ -8,9 +8,11 @@
         Title="Window1" Height="450" Width="800">
     <Grid Margin="0,0,0,0">
         <Label Content="Voer naam in" HorizontalAlignment="Left" Margin="98,49,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="ProjectNaam" HorizontalAlignment="Left" Margin="78,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ProjectNaam" HorizontalAlignment="Left" Margin="78,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="ProjectNaam_TextChanged"/>
         <Button Content="Opslaan" HorizontalAlignment="Left" Margin="736,384,0,0" VerticalAlignment="Top" Click="COpslaan"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="664,384,0,0" VerticalAlignment="Top"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="664,384,0,0" VerticalAlignment="Top" Click="CancelBttn"/>
+        <TextBox HorizontalAlignment="Left" Margin="78,154,0,0" TextWrapping="Wrap" Name="ProjectBeschrijving" Text="" VerticalAlignment="Top" Width="120" Height="75" TextChanged="ProjectBeschrijving_TextChanged"/>
+        <Label Content="Voer beschrijving in" HorizontalAlignment="Left" Margin="78,123,0,0" VerticalAlignment="Top"  Width="120"/>
 
     </Grid>
 </Window>
