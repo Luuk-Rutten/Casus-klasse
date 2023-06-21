@@ -12,7 +12,7 @@ namespace Casus_klasse
 
         public class Personeel
         {
-            public string naam { get; set;  }
+            public string naam { get; set; }
             public string? functie { get; set; }
             public int ID { get; set; }
 
@@ -21,70 +21,88 @@ namespace Casus_klasse
         public class Project
         {
             public string ProjectNaam { get; set; }
+            public string ProjectBeschrijving { get; set; }
+
             //public DateTime StartDatum { get; set; }
             //public DateTime EindDatum { get; set; }
             //public List<Personeel>? LinkedPersoneel { get; set; } 
             //public List<Taak>? Taken { get; set; }
 
         }
-
+        /*     public SaveProject()
+             {
+                 return;
+             }
+             public OpenProject()
+             {
+                 return;
+             }
+             public DeleteProject()
+             {
+                 return;
+             }
+     /**/
         public class Taak
         {
-            public int TaakNummer;
-
-            public void VoegPersoneelToe()
-            {
-
-            }
-
-            public void OpenTaak()
-            {
 
 
-            }
-
-            public void SaveTaak()
-            {
-                
-            }
-            public void DeleteTaak()
-            {
-               
-            }
         }
-    }
 
-    /*        public TaakToevoegen()
-            {
-                return;
+
+        public void OpenTaak()
+        {
+
+
+        }
+
+
+        /*        public AddTaak()
+                {
+                    return 0;
+                }
+                public DeleteTaak()
+                {
+                    return;
+                }
             }*/
 
-    /*      public NieuwProject()
-          {
-
-
-
-              return;
-          }*/
-    /*        public SaveProject()   //controleren of alle data aanwezig is van het project
+        /*    public class Bestand
             {
-                return;  //hoeft niet perse een return waarde te hebben, kan ook een mssgbox openen
+                public OpenBestand()
+                {
+
+                    return;
+                }
+                public SluitBestand()
+                {
+
+                    return;
+                }
+                public SaveBestand()
+                {
+
+                    return;
+                }
+                public DeleteBestand()
+                {
+
+                    return;
+                }
+
             }
-            public OpenProject()
+            public class Data
             {
-                return;
-            }
-            public DeleteProject()
-            {
-                return;*/
+                public ReadData()
+                {
+                    return;
+                }
+                public SaveData()
+                {
+                    return 0;
+                }
+        */
+
+    }
+
 }
- 
-
-
-      
-
-    
-
-
-
 

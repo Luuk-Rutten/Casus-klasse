@@ -26,13 +26,35 @@ namespace Casus_klasse
             InitializeComponent();
         }
 
+        //Opslaan knop binnen project menu
         private void COpslaan(object sender, RoutedEventArgs e)
         {
             Project P=new Project();
             P.ProjectNaam = ProjectNaam.Text;
-            Opslaan(P,null,null);
-            MessageBox.Show("Project created");
+            P.ProjectBeschrijving = ProjectBeschrijving.Text;
+            Opslaan(P);
             this.Close();
+        }
+
+
+        //Cancel knop binnen project menu
+
+        private void CancelBttn(object sender, RoutedEventArgs e)
+        {
+            ProjectNaam.Text = null;
+            ProjectBeschrijving.Text = null;
+            this.Close();
+
+        }
+
+        private void ProjectNaam_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ProjectBeschrijving_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

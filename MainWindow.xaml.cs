@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.IO.Enumeration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +46,7 @@ namespace Casus_klasse
         private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             //MessageBox.Show("New command executed");
-            Create w=new Create();
+            Create w = new Create();
             w.Left = Width / 2;
             w.Top = Height / 2;
             w.Show();
@@ -67,15 +70,19 @@ namespace Casus_klasse
             e.CanExecute = true;   //logica toevoegen zodat je geen project kunt openen dat al geopend is //MARK Beter denk ik om dat niet te laten zien
         }
 
+
+
+
+
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            //MessageBox.Show("Open command executed");
-            Uitlezen("");
+            MessageBox.Show("Open command executed");
+        }
+
         }
 
     }
-
-
-
-
 }
+
+
+
