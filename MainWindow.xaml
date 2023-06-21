@@ -13,14 +13,10 @@
 
     </Window.CommandBindings>
 
-    
-    
+
+
     <Grid>
-        <ComboBox x:Name="Combobox1"    HorizontalAlignment="Left" Margin="59,20,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Combobox1_Copy"  HorizontalAlignment="Left" Margin="238,20,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Combobox1_Copy1"  HorizontalAlignment="Left" Margin="412,20,0,0" VerticalAlignment="Top" Width="120"/>
-
-
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="20"    />
 
@@ -52,14 +48,17 @@
             </Menu>
 
         </DockPanel>
+        
+        
         <Grid Grid.Column="1" Grid.Row="1" Margin="10,10,30,10" >
 
         
 
 
 
+
             <Grid.RowDefinitions>
-             
+
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
@@ -82,7 +81,9 @@
             </Grid.ColumnDefinitions>
 
         </Grid>
+        <TextBox x:Name="ProjectBox" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Height="339"/>
+        <Menu/>
 
     </Grid>
-    
+
 </Window>

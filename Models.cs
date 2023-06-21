@@ -12,7 +12,7 @@ namespace Casus_klasse
 
         public class Personeel
         {
-            public string naam { get; set;  }
+            public string naam { get; set; }
             public string? functie { get; set; }
             public int ID { get; set; }
 
@@ -29,73 +29,80 @@ namespace Casus_klasse
             //public List<Taak>? Taken { get; set; }
 
         }
-        public SaveProject()
+        /*     public SaveProject()
+             {
+                 return;
+             }
+             public OpenProject()
+             {
+                 return;
+             }
+             public DeleteProject()
+             {
+                 return;
+             }
+     /**/
+        public class Taak
         {
-            return;
+
+
         }
-        public OpenProject()
+
+
+        public void OpenTaak()
         {
-            return;
-        }
-        public DeleteProject()
-        {
-            return;
-        }
-
-            public void OpenTaak()
-            {
-
-
-            }
-
-
-            public AddTaak()
-            {
-                return;
-            }
-            public DeleteTaak()
-            {
-                return;
-            }
-        }
-
-        public class Bestand
-        {
-            public OpenBestand()
-            {
-
-                return;
-            }
-            public SluitBestand()
-            {
-
-                return;
-            }
-            public SaveBestand()
-            {
-
-                return;
-            }
-            public DeleteBestand()
-            {
-
-                return;
-            }
-
-        }
-        public class Data
-        {
-            public ReadData()
-            {
-                return;
-            }
-            public SaveData()
-            {
-                return;
-            }
 
 
         }
 
 
+        /*        public AddTaak()
+                {
+                    return 0;
+                }
+                public DeleteTaak()
+                {
+                    return;
+                }
+            }*/
+
+        /*    public class Bestand
+            {
+                public OpenBestand()
+                {
+
+                    return;
+                }
+                public SluitBestand()
+                {
+
+                    return;
+                }
+                public SaveBestand()
+                {
+
+                    return;
+                }
+                public DeleteBestand()
+                {
+
+                    return;
+                }
+
+            }
+            public class Data
+            {
+                public ReadData()
+                {
+                    return;
+                }
+                public SaveData()
+                {
+                    return 0;
+                }
+        */
+
+    }
+
+}
 

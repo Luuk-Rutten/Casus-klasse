@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Enumeration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,20 +70,40 @@ namespace Casus_klasse
 
 
 
-            private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-            {
+        private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
             //opent window waarin je een file kunt selecteren om te openen
 
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = @"C:\Users\Luuk\OneDrive\Documenten\Ad- ICT 2022\Blok 4\Software Modeling\Casus\Casus klasse\bin\Debug\net6.0-windows\xml bestanden";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            var fileName = openFileDialog.InitialDirectory = @"C:\Users\Luuk\OneDrive\Documenten\Ad- ICT 2022\Blok 4\Software Modeling\Casus\Casus klasse\bin\Debug\net6.0-windows\xml bestanden";
             openFileDialog.Filter = "Xml files (*.Xml)|*.xml|All files (*.*)|*.*";
-            openFileDialog.ShowDialog();
 
-        }
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var fileStream = openFileDialog.OpenFile();
+
+                //schrijft inhoud file naar Textbox in de Mainwindow
+
+                  using (StreamReader reader = new StreamReader(fileStream))
+                //using (XmlReader xr = XmlReader.Create(fileStream)) 
+                                
+              {
+                   // XmlNodeType type = XmlNodeType.Element;
+                    var fileContent = reader.ReadToEnd();
+
+
+                    ProjectBox.Text = fileContent;
+                }
+
+
+
+            }
 
         }
 
     }
+}
 
 
 
