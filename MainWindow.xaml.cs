@@ -85,12 +85,12 @@ namespace Casus_klasse
 
                 //schrijft inhoud file naar Textbox in de Mainwindow
 
-                  using (StreamReader reader = new StreamReader(fileStream))
-                //using (XmlReader xr = XmlReader.Create(fileStream)) 
+                  //using (StreamReader reader = new StreamReader(fileStream))
+                using (XmlReader xr = XmlReader.Create(fileStream)) 
                                 
               {
-                   // XmlNodeType type = XmlNodeType.Element;
-                    var fileContent = reader.ReadToEnd();
+                    XmlNodeType type = XmlNodeType.Element;
+                    //var fileContent = reader.ReadToEnd();
 
 
                     ProjectBox.Text = fileContent;
