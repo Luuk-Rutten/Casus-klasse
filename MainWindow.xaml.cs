@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using static Casus_klasse.Models;
+using static Casus_klasse.DataVerwerking;
 
 
 namespace Casus_klasse
@@ -26,9 +28,11 @@ namespace Casus_klasse
         public MainWindow()
         {
             InitializeComponent();
-
-            
-           
+            List<String> Projecten=GetProjecten();
+            foreach (String s in Projecten)
+            {
+                H_Open.Items.Add(s);
+            }
         }
 
         private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -65,7 +69,8 @@ namespace Casus_klasse
 
         private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("Open command executed");
+            //MessageBox.Show("Open command executed");
+            Uitlezen("");
         }
 
     }

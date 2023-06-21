@@ -35,8 +35,11 @@
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_Project">
                     <MenuItem Header="_Nieuw" Command="ApplicationCommands.New" />
-                    <MenuItem Header="_Open" Command="ApplicationCommands.Open" />
-                    <MenuItem Header="_Opslaan" />
+                    <MenuItem Name="H_Open" Header="_Open" Command="ApplicationCommands.Open" >
+                    <MenuItem Header="test" Command=""/>
+
+                </MenuItem>
+                <MenuItem Header="_Opslaan" />
                     <MenuItem Header="_Opslaan Als.." />
 
                 </MenuItem>

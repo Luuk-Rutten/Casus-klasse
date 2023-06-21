@@ -27,6 +27,7 @@ namespace Casus_klasse
             //public List<Taak>? Taken { get; set; }
 
         }
+
         public class Taak
         {
             public int TaakNummer;

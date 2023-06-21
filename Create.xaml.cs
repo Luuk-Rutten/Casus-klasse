@@ -30,7 +30,9 @@ namespace Casus_klasse
         {
             Project P=new Project();
             P.ProjectNaam = ProjectNaam.Text;
-            Opslaan(P);
+            Opslaan(P,null,null);
+            MessageBox.Show("Project created");
+            this.Close();
         }
     }
 }
