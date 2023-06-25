@@ -21,7 +21,7 @@ namespace Casus_klasse
         public class Project
         {
             public string ProjectNaam { get; set; }
-            public string ProjectBeschrijving { get; set; }
+            public string? ProjectBeschrijving { get; set; }
 
             //public DateTime StartDatum { get; set; }
             //public DateTime EindDatum { get; set; }

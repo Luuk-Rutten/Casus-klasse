@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
-
+using System.Xml.Serialization;
 
 namespace Casus_klasse
 {
@@ -76,13 +76,29 @@ namespace Casus_klasse
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.InitialDirectory = @"C:\Users\Luuk\OneDrive\Documenten\Ad- ICT 2022\Blok 4\Software Modeling\Casus\Casus klasse\bin\Debug\net6.0-windows\xml bestanden";
             openFileDialog.Filter = "Xml files (*.Xml)|*.xml|All files (*.*)|*.*";
-            openFileDialog.ShowDialog();
+           
+            
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var fileStream = openFileDialog.OpenFile();
+
+                //schrijft inhoud file naar Textbox in de Mainwindow
+
+                using (StreamReader reader = new StreamReader(fileStream))
+                {
+
+                    var fileContent = reader.ReadToEnd();
+
+
+                    ProjectBox.Text = fileContent;
 
         }
 
         }
 
     }
-
+    }
+}
 
 

@@ -79,6 +79,8 @@
             </Grid.ColumnDefinitions>
 
         </Grid>
+        <TextBox x:Name="ProjectBox" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Height="379"/>
+        <Menu/>
 
     </Grid>
     
