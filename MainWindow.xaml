@@ -13,8 +13,8 @@
 
     </Window.CommandBindings>
 
-    
-    
+
+
     <Grid>
 
 
@@ -32,6 +32,7 @@
         </Grid.ColumnDefinitions>
 
         <DockPanel Grid.Column="2" >
+            
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_Project">
                     <MenuItem Header="_Nieuw" Command="ApplicationCommands.New" />
@@ -51,12 +52,12 @@
         </DockPanel>
         <Grid Grid.Column="1" Grid.Row="1" Margin="10,10,30,10" >
 
-        
+
 
 
 
             <Grid.RowDefinitions>
-             
+
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
@@ -83,5 +84,5 @@
         <Menu/>
 
     </Grid>
-    
+
 </Window>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,12 +70,12 @@ namespace Casus_klasse
 
 
 
-            private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-            {
+        private void OpenCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
             //opent window waarin je een file kunt selecteren om te openen
 
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = @"C:\Users\Luuk\OneDrive\Documenten\Ad- ICT 2022\Blok 4\Software Modeling\Casus\Casus klasse\bin\Debug\net6.0-windows\xml bestanden";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = @"C:\Users\Luuk\OneDrive\Documenten\Ad- ICT 2022\Blok 4\Software Modeling\Casus\Casus klasse\bin\Debug\net6.0-windows\xml bestanden";
             openFileDialog.Filter = "Xml files (*.Xml)|*.xml|All files (*.*)|*.*";
            
             
@@ -93,11 +94,11 @@ namespace Casus_klasse
 
                     ProjectBox.Text = fileContent;
 
-        }
+                }
+
+            }
 
         }
-
-    }
     }
 }
 
