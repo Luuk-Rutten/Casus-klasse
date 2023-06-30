@@ -16,8 +16,7 @@
 
 
     <Grid>
-
-
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="20"    />
 
@@ -36,8 +35,11 @@
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_Project">
                     <MenuItem Header="_Nieuw" Command="ApplicationCommands.New" />
-                    <MenuItem Header="_Open" Command="ApplicationCommands.Open" />
-                    <MenuItem Header="_Opslaan" />
+                    <MenuItem Name="H_Open" Header="_Open" Command="ApplicationCommands.Open" >
+                    <MenuItem Header="test" Command=""/>
+
+                </MenuItem>
+                <MenuItem Header="_Opslaan" />
                     <MenuItem Header="_Opslaan Als.." />
 
                 </MenuItem>
@@ -50,7 +52,10 @@
             </Menu>
 
         </DockPanel>
+        
+        
         <Grid Grid.Column="1" Grid.Row="1" Margin="10,10,30,10" >
+
 
 
 
@@ -80,7 +85,7 @@
             </Grid.ColumnDefinitions>
 
         </Grid>
-        <TextBox x:Name="ProjectBox" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Height="379"/>
+        <TextBox x:Name="ProjectBox" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Height="339"/>
         <Menu/>
 
     </Grid>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.IO.Pipes;
+using System.IO.Enumeration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
-using System.Xml.Serialization;
+using static Casus_klasse.Models;
+using static Casus_klasse.DataVerwerking;
 
 namespace Casus_klasse
 {
@@ -29,9 +30,11 @@ namespace Casus_klasse
         public MainWindow()
         {
             InitializeComponent();
-
-
-
+            List<String> Projecten=GetProjecten();
+            foreach (String s in Projecten)
+            {
+                H_Open.Items.Add(s);
+            }
         }
 
         private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -75,10 +78,9 @@ namespace Casus_klasse
             //opent window waarin je een file kunt selecteren om te openen
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = @"C:\Users\Luuk\OneDrive\Documenten\Ad- ICT 2022\Blok 4\Software Modeling\Casus\Casus klasse\bin\Debug\net6.0-windows\xml bestanden";
+            var fileName = openFileDialog.InitialDirectory = @"C:\Users\Luuk\OneDrive\Documenten\Ad- ICT 2022\Blok 4\Software Modeling\Casus\Casus klasse\bin\Debug\net6.0-windows\xml bestanden";
             openFileDialog.Filter = "Xml files (*.Xml)|*.xml|All files (*.*)|*.*";
-           
-            
+
 
             if (openFileDialog.ShowDialog() == true)
             {
@@ -86,19 +88,23 @@ namespace Casus_klasse
 
                 //schrijft inhoud file naar Textbox in de Mainwindow
 
-                using (StreamReader reader = new StreamReader(fileStream))
-                {
-
-                    var fileContent = reader.ReadToEnd();
+                  //using (StreamReader reader = new StreamReader(fileStream))
+                using (XmlReader xr = XmlReader.Create(fileStream)) 
+                                
+              {
+                    XmlNodeType type = XmlNodeType.Element;
+                    //var fileContent = reader.ReadToEnd();
 
 
                     ProjectBox.Text = fileContent;
-
                 }
+
+
 
             }
 
-        }
+            }
+
     }
 }
 
