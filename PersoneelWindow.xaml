@@ -1,0 +1,23 @@
+﻿<Window x:Class="Casus_klasse.PersoneelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Casus_klasse"
+        mc:Ignorable="d"
+        Title="PersoneelWindow" Height="450" Width="800">
+    <Grid>
+        <Border Background="{StaticResource Background}"/>
+
+        <ComboBox x:Name="CbPersoneel" HorizontalAlignment="Left" Margin="89,84,0,0" VerticalAlignment="Top" Width="120" />
+        <TextBox HorizontalAlignment="Left" Margin="89,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="89,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Personeel" HorizontalAlignment="Left" Margin="89,57,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Naam" HorizontalAlignment="Left" Margin="89,126,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Functie" HorizontalAlignment="Left" Margin="89,186,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Verwijderen" HorizontalAlignment="Left" Margin="265,103,0,0" VerticalAlignment="Top" Height="36" Width="80" />
+        <Button Content="Aanmaken" HorizontalAlignment="Left" Margin="265,176,0,0" VerticalAlignment="Top" Height="36" Width="80"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="563,314,0,0" VerticalAlignment="Top" Width="44" Click="Button_Click"/>
+        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="639,314,0,0" VerticalAlignment="Top" Width="58"/>
+    </Grid>
+</Window>

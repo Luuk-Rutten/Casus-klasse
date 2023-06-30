@@ -33,11 +33,11 @@ namespace Casus_klasse
                 serializer.Serialize(stream, cProject);
                 stream.Dispose();
             }
-            else if (cPersoneel!=null)
+            else if (cPersoneel != null)
             {
-                
+
             }
-            else if (cTaak!=null)
+            else if (cTaak != null)
             {
 
             }
@@ -57,8 +57,8 @@ namespace Casus_klasse
         public static object Uitlezen(string cNaam)
         {
             stream = File.OpenRead($"..{FilePath}{cNaam}.xml");
-            var returnobject= serializer.Deserialize(stream) as Project;
-            return 0; 
+            var returnobject = serializer.Deserialize(stream) as Project;
+            return 0;
         }
 
         public static void CheckFileExists(string name)
@@ -70,7 +70,7 @@ namespace Casus_klasse
             }
         }
 
-        public static List<String> GetProjecten ()
+/*        public static List<String> GetProjecten ()
         {
             List<String> FileNames = new List<String>();
             DirectoryInfo d = new DirectoryInfo($"..{FilePath}");
@@ -80,7 +80,7 @@ namespace Casus_klasse
                 FileNames.Add(file.Name);
             }
             return FileNames;
-        }
+        }*/
     
     }
 

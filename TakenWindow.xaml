@@ -1,0 +1,34 @@
+﻿<Window x:Class="Casus_klasse.TakenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Casus_klasse"
+        mc:Ignorable="d"
+        Title="Taken" Height="450" Width="800">
+
+
+
+    <Grid>
+
+
+        <Border Background="{StaticResource Background}"/>
+
+
+        <Label Content="Voer naam taak in:" HorizontalAlignment="Left" Margin="68,53,0,0" VerticalAlignment="Top" Height="28" Width="116"/>
+        <TextBox x:Name="TaakNaam" HorizontalAlignment="Left" Margin="66,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="24"/>
+        <Label Content="Voeg werknemers toe:" HorizontalAlignment="Left" Margin="86,156,0,0" VerticalAlignment="Top" Width="128"/>
+        <ListBox x:Name="LbTaken1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="66,187,586,162" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding ItemBindingGroup, ElementName=LbTaken1}"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="552,84,0,0" VerticalAlignment="Top" Text="StartDatum"/>
+        <DatePicker x:Name="datePicker_Copy" HorizontalAlignment="Left" Margin="552,145,0,0" VerticalAlignment="Top" Text="EindDatum"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="583,336,0,0" VerticalAlignment="Top" Click="CancelBttn" />
+        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="651,336,0,0" VerticalAlignment="Top" Click="COpslaanTaak"/>
+        <ListBox x:Name="LbTaken2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="252,187,400,162" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged" IsSynchronizedWithCurrentItem="False"/>
+        <Label Content="=>" HorizontalAlignment="Left" Margin="221,212,0,0" VerticalAlignment="Top" Height="22" Width="31"/>
+        <TextBox x:Name="TaakBeschrijving" HorizontalAlignment="Left" Margin="252,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="47"/>
+        <Label Content="Voer beschrijving taak in:" HorizontalAlignment="Left" Margin="252,53,0,0" VerticalAlignment="Top" Height="28" Width="142"/>
+        <Label Content="Begindatum" HorizontalAlignment="Left" Margin="565,53,0,0" VerticalAlignment="Top"  />
+        <Label Content="Einddatum" HorizontalAlignment="Left" Margin="569,116,0,0" VerticalAlignment="Top" Width="67"/>
+
+    </Grid>
+</Window>

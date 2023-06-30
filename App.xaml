@@ -4,6 +4,51 @@
              xmlns:local="clr-namespace:Casus_klasse"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Thema.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+
+        <Style TargetType="local:MainWindow">
+          
+
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+      
+        <Style TargetType="Button" >
+            <Setter Property="BorderThickness"  Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+                <Setter Property="Background" Value="AliceBlue"/>
+            </Style>
+
+        <Style TargetType="Menu">
+            <Setter Property="Background" Value="AliceBlue"/>
+
+            <Setter Property="BorderBrush" Value="DarkGray" />
+            <Setter Property="BorderThickness"  Value="1" />
+        </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Background" Value="LightCyan"/>
+                <Setter Property="BorderBrush" Value="DarkGray" />
+                <Setter Property="BorderThickness"  Value="1" />
+            </Style>
+            <Style TargetType="ListBox">
+                <Setter Property="Background" Value="LightCyan"/>
+                <Setter Property="BorderBrush" Value="DarkGray" />
+                <Setter Property="BorderThickness"  Value="1" />
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Background" Value="LightCyan"/>
+                <Setter Property="BorderBrush" Value="DarkGray" />
+                <Setter Property="BorderThickness"  Value="1" />
+            </Style>
+
+        </ResourceDictionary>
+
+
     </Application.Resources>
 </Application>

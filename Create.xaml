@@ -5,14 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Casus_klasse"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Projecten" Height="450" Width="800">
     <Grid Margin="0,0,0,0">
-        <Label Content="Voer naam in" HorizontalAlignment="Left" Margin="98,49,0,0" VerticalAlignment="Top"/>
+        <Border Background="{StaticResource Background}"/>
+        <Label Content="Naam project" HorizontalAlignment="Left" Margin="81,49,0,0" VerticalAlignment="Top"/>
         <TextBox Name="ProjectNaam" HorizontalAlignment="Left" Margin="78,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="ProjectNaam_TextChanged"/>
-        <Button Content="Opslaan" HorizontalAlignment="Left" Margin="736,384,0,0" VerticalAlignment="Top" Click="COpslaan"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="664,384,0,0" VerticalAlignment="Top" Click="CancelBttn"/>
-        <TextBox HorizontalAlignment="Left" Margin="78,154,0,0" TextWrapping="Wrap" Name="ProjectBeschrijving" Text="" VerticalAlignment="Top" Width="120" Height="75" TextChanged="ProjectBeschrijving_TextChanged"/>
-        <Label Content="Voer beschrijving in" HorizontalAlignment="Left" Margin="78,123,0,0" VerticalAlignment="Top"  Width="120"/>
+        <Button  Content="Opslaan"  HorizontalAlignment="Left" Margin="654,384,0,0" VerticalAlignment="Top" Click="COpslaan" Height="20" Width="51"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="599,384,0,0" VerticalAlignment="Top" Click="CancelBttn"/>
+        <TextBox HorizontalAlignment="Left" Margin="78,154,0,0" TextWrapping="Wrap" Name="ProjectBeschrijving" Text="" VerticalAlignment="Top" Width="120" Height="208" TextChanged="ProjectBeschrijving_TextChanged"/>
+        <Label Content="Projectbeschrijving" HorizontalAlignment="Left" Margin="78,123,0,0" VerticalAlignment="Top"  Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="263,78,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Open bestaand project" HorizontalAlignment="Left" Margin="257,49,0,0" VerticalAlignment="Top"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,227,413,101"/>
+        <Label Content="Voeg taken aan project toe" HorizontalAlignment="Left" Margin="260,174,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button Content="Toevoegen" HorizontalAlignment="Left" Margin="398,227,0,0" VerticalAlignment="Top" Height="29" Width="70" />
+        <Button Content="Verwijderen" HorizontalAlignment="Left" Margin="398,300,0,0" VerticalAlignment="Top" Height="29" Width="70"/>
+        <ListBox  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="479,227,190,101"/>
+        <Label Content="Beschikbare taken" HorizontalAlignment="Left" Margin="260,201,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Project taken" HorizontalAlignment="Left" Margin="482,201,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="=>" HorizontalAlignment="Left" Margin="420,265,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

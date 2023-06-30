@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,49 +14,51 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static Casus_klasse.Models;
 using static Casus_klasse.DataVerwerking;
-using static Casus_klasse.TakenWindow;
+using static Casus_klasse.Create;
+using System.Xml;
+
 namespace Casus_klasse
 {
     /// <summary>
-    /// Interaction logic for Create.xaml
+    /// Interaction logic for TakenWindow.xaml
     /// </summary>
-    public partial class Create : Window
+    public partial class TakenWindow : Window
     {
-        public Create()
+
+
+        public TakenWindow()
         {
             InitializeComponent();
         }
 
-        //Opslaan knop binnen project menu
-        private void COpslaan(object sender, RoutedEventArgs e)
+        private void COpslaanTaak(object sender, RoutedEventArgs e)
         {
-            Project P = new Project();
-            P.ProjectNaam = ProjectNaam.Text;
-            P.ProjectBeschrijving = ProjectBeschrijving.Text;
-            Opslaan(P, null, null);
+            Taak T = new Taak();
+            T.TaakNaam = TaakNaam.Text;
+            T.TaakBeschrijving = TaakBeschrijving.Text;
+            Opslaan(null, null, T);
             this.Close();
         }
-
-
-
-
-
-        //Cancel knop binnen project menu
 
         private void CancelBttn(object sender, RoutedEventArgs e)
         {
-            ProjectNaam.Text = null;
-            ProjectBeschrijving.Text = null;
+            TaakNaam.Text = null;
+            TaakBeschrijving.Text = null;
             this.Close();
 
         }
 
-        private void ProjectNaam_TextChanged(object sender, TextChangedEventArgs e)
+        private void Personeel()
         {
+            //using (XmlReader reader = XmlReader.Create(stream)) ;
+
+
 
         }
 
-        private void ProjectBeschrijving_TextChanged(object sender, TextChangedEventArgs e)
+
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

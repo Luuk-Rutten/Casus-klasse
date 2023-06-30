@@ -9,10 +9,11 @@ namespace Casus_klasse
 {
     public class Models
     {
+        public List<Personeel>? LinkedPersoneel { get; set; }
 
         public class Personeel
         {
-            public string naam { get; set; }
+            public string? naam { get; set; }
             public string? functie { get; set; }
             public int ID { get; set; }
 
@@ -22,29 +23,18 @@ namespace Casus_klasse
         {
             public string ProjectNaam { get; set; }
             public string? ProjectBeschrijving { get; set; }
-
-            //public DateTime StartDatum { get; set; }
-            //public DateTime EindDatum { get; set; }
-            //public List<Personeel>? LinkedPersoneel { get; set; } 
-            //public List<Taak>? Taken { get; set; }
+            public List<Taak>? Taken { get; set; }
 
         }
-        /*     public SaveProject()
-             {
-                 return;
-             }
-             public OpenProject()
-             {
-                 return;
-             }
-             public DeleteProject()
-             {
-                 return;
-             }
-     /**/
+  
         public class Taak
         {
+            public string TaakNaam { get; set; }
 
+            public string? TaakBeschrijving { get; set; }
+
+            public DateTime StartDatum { get; set; }
+            public DateTime EindDatum { get; set; }
 
         }
 
@@ -56,51 +46,7 @@ namespace Casus_klasse
         }
 
 
-        /*        public AddTaak()
-                {
-                    return 0;
-                }
-                public DeleteTaak()
-                {
-                    return;
-                }
-            }*/
-
-        /*    public class Bestand
-            {
-                public OpenBestand()
-                {
-
-                    return;
-                }
-                public SluitBestand()
-                {
-
-                    return;
-                }
-                public SaveBestand()
-                {
-
-                    return;
-                }
-                public DeleteBestand()
-                {
-
-                    return;
-                }
-
-            }
-            public class Data
-            {
-                public ReadData()
-                {
-                    return;
-                }
-                public SaveData()
-                {
-                    return 0;
-                }
-        */
+      
 
     }
 
