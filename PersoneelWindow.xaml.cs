@@ -32,11 +32,44 @@ namespace Casus_klasse
         public PersoneelWindow()
         {
             InitializeComponent();
+            List<Personeel> AllPers=PersoneelUitlezen();
+            foreach (Personeel P in AllPers)
+            {
+                CbPersoneel.Items.Add(P.naam);
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow w = new MainWindow();
+            w.Left = Width / 2;
+            w.Top = Height / 2;
+            w.Show();
             this.Close();
         }
+
+        private void Personeel_aanmaken(object sender, RoutedEventArgs e)
+        {
+            if (PersoneelNaam.Text.Trim()=="" || PersoneelFunctie.Text.Trim()=="")
+            {
+                MessageBox.Show("Fill in all forms");
+            }
+            else
+            {
+                Personeel pers = new Personeel();
+                pers.naam = PersoneelNaam.Text;
+                pers.functie = PersoneelFunctie.Text;
+                pers.ID = Guid.NewGuid();
+                Opslaan(null, pers, null);
+                PersoneelWindow w = new PersoneelWindow();
+                w.Left = Width / 2;
+                w.Top = Height / 2;
+                w.Show();
+                this.Close();
+            }
+
+        }
+
     }
 }

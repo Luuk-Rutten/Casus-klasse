@@ -9,9 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="xml bestanden\test1.xml">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+    <Folder Include="xml bestanden\Personeel\" />
+    <Folder Include="xml bestanden\Taken\" />
   </ItemGroup>
 
 </Project>

@@ -8,22 +8,24 @@
         Title="Projecten" Height="450" Width="800">
     <Grid Margin="0,0,0,0">
         <Border Background="{StaticResource Background}"/>
-        <Label Content="Naam project" HorizontalAlignment="Left" Margin="81,49,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="ProjectNaam" HorizontalAlignment="Left" Margin="78,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="ProjectNaam_TextChanged"/>
-        <Button  Content="Opslaan"  HorizontalAlignment="Left" Margin="654,384,0,0" VerticalAlignment="Top" Click="COpslaan" Height="20" Width="51"/>
-        <Button Content="Terug" HorizontalAlignment="Left" Margin="599,384,0,0" VerticalAlignment="Top" Click="CancelBttn"/>
-        <TextBox HorizontalAlignment="Left" Margin="78,154,0,0" TextWrapping="Wrap" Name="ProjectBeschrijving" Text="" VerticalAlignment="Top" Width="120" Height="208" TextChanged="ProjectBeschrijving_TextChanged"/>
-        <Label Content="Projectbeschrijving" HorizontalAlignment="Left" Margin="78,123,0,0" VerticalAlignment="Top"  Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="263,78,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Open bestaand project" HorizontalAlignment="Left" Margin="257,49,0,0" VerticalAlignment="Top"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,227,413,101"/>
-        <Label Content="Voeg taken aan project toe" HorizontalAlignment="Left" Margin="260,174,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button Content="Toevoegen" HorizontalAlignment="Left" Margin="398,227,0,0" VerticalAlignment="Top" Height="29" Width="70" />
-        <Button Content="Verwijderen" HorizontalAlignment="Left" Margin="398,300,0,0" VerticalAlignment="Top" Height="29" Width="70"/>
-        <ListBox  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="479,227,190,101"/>
-        <Label Content="Beschikbare taken" HorizontalAlignment="Left" Margin="260,201,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Project taken" HorizontalAlignment="Left" Margin="482,201,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="=>" HorizontalAlignment="Left" Margin="420,265,0,0" VerticalAlignment="Top"/>
+        <Label Content="Naam project" HorizontalAlignment="Left" Margin="530,44,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="ProjectNaam" HorizontalAlignment="Left" Margin="515,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
+        <Button  Content="Opslaan"  HorizontalAlignment="Left" Margin="398,384,0,0" VerticalAlignment="Top" Click="COpslaan" Height="20" Width="51" Background="#FFE4F0FB"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="274,384,0,0" VerticalAlignment="Top" Click="CancelBttn"/>
+        <TextBox HorizontalAlignment="Left" Margin="392,131,0,0" TextWrapping="Wrap" Name="ProjectBeschrijving" Text="" VerticalAlignment="Top" Width="366" Height="65" />
+        <Label Content="Projectbeschrijving" HorizontalAlignment="Left" Margin="515,100,0,0" VerticalAlignment="Top"  Width="120"/>
+        <ComboBox Name="ProjectenBOX" HorizontalAlignment="Left" Margin="125,59,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
+        <ListBox Name="BeschTaken" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="411,253,259,75" Visibility="Hidden"/>
+        <Label Content="Voeg taken aan project toe" HorizontalAlignment="Left" Margin="494,0,0,0" VerticalAlignment="Center" FontWeight="Bold" Visibility="Hidden"/>
+        <Button Content="Toevoegen" HorizontalAlignment="Left" Margin="550,257,0,0" VerticalAlignment="Top" Height="29" Width="70" Visibility="Hidden" />
+        <Button Content="Verwijderen" HorizontalAlignment="Left" Margin="550,324,0,0" VerticalAlignment="Top" Height="29" Width="70" Visibility="Hidden"/>
+        <ListBox  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="625,253,44,75" Visibility="Hidden"/>
+        <Label Content="Beschikbare taken" HorizontalAlignment="Left" Margin="414,223,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label Content="Project taken" HorizontalAlignment="Left" Margin="625,222,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label Content="=>" HorizontalAlignment="Left" Margin="567,286,0,0" VerticalAlignment="Top" Width="36" Visibility="Hidden"/>
+        <Label Content="Nieuw project aanmaken" HorizontalAlignment="Left" Margin="437,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Bestaand project openen" HorizontalAlignment="Left" Margin="63,0,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Button Content="Open" HorizontalAlignment="Left" Margin="168,106,0,0" VerticalAlignment="Top" Click="ProjectOpen"/>
 
     </Grid>
 </Window>

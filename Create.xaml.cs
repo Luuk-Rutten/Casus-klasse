@@ -14,6 +14,9 @@ using System.Windows.Shapes;
 using static Casus_klasse.Models;
 using static Casus_klasse.DataVerwerking;
 using static Casus_klasse.TakenWindow;
+using System.IO;
+using System.Xml.Serialization;
+
 namespace Casus_klasse
 {
     /// <summary>
@@ -24,39 +27,67 @@ namespace Casus_klasse
         public Create()
         {
             InitializeComponent();
+            DirectoryInfo DIfiles = new DirectoryInfo($"../../../xml bestanden/");
+            FileInfo[] files = DIfiles.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                ProjectenBOX.Items.Add(file.Name.Substring(0,file.Name.Length-4));
+            }
+
+            List<Taak> Taken = TakenUitlezen();
+            foreach (Taak taak in Taken)
+            {
+                BeschTaken.Items.Add(taak.TaakNaam);
+            }
         }
 
         //Opslaan knop binnen project menu
         private void COpslaan(object sender, RoutedEventArgs e)
         {
-            Project P = new Project();
-            P.ProjectNaam = ProjectNaam.Text;
-            P.ProjectBeschrijving = ProjectBeschrijving.Text;
-            Opslaan(P, null, null);
-            this.Close();
+            if (ProjectNaam.Text.Trim()==""||ProjectBeschrijving.Text.Trim()=="")
+            {
+                MessageBox.Show("Fill in all forms");
+            }
+            else
+            {
+                Project P = new Project();
+                P.ProjectNaam = ProjectNaam.Text;
+                P.ProjectBeschrijving = ProjectBeschrijving.Text;
+                Opslaan(P, null, null);
+                MainWindow w = new MainWindow();
+                w.Left = Width / 2;
+                w.Top = Height / 2;
+                w.Show();
+                this.Close();
+            }
         }
-
-
-
-
 
         //Cancel knop binnen project menu
-
         private void CancelBttn(object sender, RoutedEventArgs e)
         {
-            ProjectNaam.Text = null;
-            ProjectBeschrijving.Text = null;
+            MainWindow w = new MainWindow();
+            w.Left = Width / 2;
+            w.Top = Height / 2;
+            w.Show();
             this.Close();
 
         }
 
-        private void ProjectNaam_TextChanged(object sender, TextChangedEventArgs e)
+        private void ProjectOpen(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ProjectBeschrijving_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            if (ProjectenBOX.SelectedItem != null)
+            {
+                Globals.SelectedProject = ProjectenBOX.SelectedItem.ToString();
+                MainWindow w = new MainWindow();
+                w.Left = Width / 2;
+                w.Top = Height / 2;
+                w.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Select a project!");
+            }
 
         }
     }

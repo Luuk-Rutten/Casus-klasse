@@ -17,18 +17,26 @@
 
         <Label Content="Voer naam taak in:" HorizontalAlignment="Left" Margin="68,53,0,0" VerticalAlignment="Top" Height="28" Width="116"/>
         <TextBox x:Name="TaakNaam" HorizontalAlignment="Left" Margin="66,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="24"/>
-        <Label Content="Voeg werknemers toe:" HorizontalAlignment="Left" Margin="86,156,0,0" VerticalAlignment="Top" Width="128"/>
-        <ListBox x:Name="LbTaken1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="66,187,586,162" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding ItemBindingGroup, ElementName=LbTaken1}"/>
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="552,84,0,0" VerticalAlignment="Top" Text="StartDatum"/>
-        <DatePicker x:Name="datePicker_Copy" HorizontalAlignment="Left" Margin="552,145,0,0" VerticalAlignment="Top" Text="EindDatum"/>
+        <Label Content="Voeg werknemers toe:" HorizontalAlignment="Left" Margin="66,156,0,0" VerticalAlignment="Top" Width="128"/>
+        <ListBox x:Name="AvailableWN" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="66,187,586,162" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding ItemBindingGroup, ElementName=LbTaken1}"/>
+        <DatePicker x:Name="StartTime" HorizontalAlignment="Left" Margin="552,84,0,0" VerticalAlignment="Top" Text="StartDatum"/>
+        <DatePicker x:Name="FinishTime" HorizontalAlignment="Left" Margin="552,145,0,0" VerticalAlignment="Top" Text="EindDatum"/>
         <Button Content="Terug" HorizontalAlignment="Left" Margin="583,336,0,0" VerticalAlignment="Top" Click="CancelBttn" />
         <Button Content="Opslaan" HorizontalAlignment="Left" Margin="651,336,0,0" VerticalAlignment="Top" Click="COpslaanTaak"/>
-        <ListBox x:Name="LbTaken2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="252,187,400,162" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged" IsSynchronizedWithCurrentItem="False"/>
-        <Label Content="=>" HorizontalAlignment="Left" Margin="221,212,0,0" VerticalAlignment="Top" Height="22" Width="31"/>
-        <TextBox x:Name="TaakBeschrijving" HorizontalAlignment="Left" Margin="252,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="47"/>
-        <Label Content="Voer beschrijving taak in:" HorizontalAlignment="Left" Margin="252,53,0,0" VerticalAlignment="Top" Height="28" Width="142"/>
+        <ListBox x:Name="AddedWN" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,187,361,162" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="False"/>
+        <Label Visibility="Hidden" Content="=>" HorizontalAlignment="Left" Margin="221,212,0,0" VerticalAlignment="Top" Height="22" Width="31"/>
+        <TextBox x:Name="TaakBeschrijving" HorizontalAlignment="Left" Margin="291,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161" Height="65"/>
+        <Label Content="Voer beschrijving taak in:" HorizontalAlignment="Left" Margin="300,49,0,0" VerticalAlignment="Top" Height="28" Width="142"/>
         <Label Content="Begindatum" HorizontalAlignment="Left" Margin="565,53,0,0" VerticalAlignment="Top"  />
         <Label Content="Einddatum" HorizontalAlignment="Left" Margin="569,116,0,0" VerticalAlignment="Top" Width="67"/>
-
+        <Button Content="Add" HorizontalAlignment="Left" Margin="236,200,0,0" VerticalAlignment="Top" Click="Move_Werknemer"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="226,239,0,0" VerticalAlignment="Top" Click="Move_Werknemer"/>
+        <ListBox x:Name="TakenLB" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="68,305,584,43" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding ItemBindingGroup, ElementName=LbTaken1}"/>
+        <Label Content="Kies afhankelijke taken" HorizontalAlignment="Left" Margin="66,279,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Toegevoegde werknemers:" HorizontalAlignment="Left" Margin="291,156,0,0" VerticalAlignment="Top" Width="161"/>
+        <CheckBox Name="CBTaakstarted" Content="Taak started" HorizontalAlignment="Left" Margin="552,192,0,0" VerticalAlignment="Top" Width="102" />
+        <CheckBox Name="CBTaakDone" Content="Taak done" Visibility="Hidden" HorizontalAlignment="Left" Margin="552,215,0,0" VerticalAlignment="Top" Width="102" />
+        <ListBox Name="TakenAL" IsEnabled="False" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,305,361,43" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding ItemBindingGroup, ElementName=LbTaken1}"/>
+        <Label Content="Al togevoegd" HorizontalAlignment="Left" Margin="291,279,0,0" VerticalAlignment="Top" Width="144"/>
     </Grid>
 </Window>

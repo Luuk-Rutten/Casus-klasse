@@ -10,7 +10,7 @@
 
 
 
-    <Grid  >
+    <Grid  Name="ProjectGrid">
 
         <Border Background="{StaticResource Background}"/>
 
@@ -25,8 +25,12 @@
                 <MenuItem Header="_Personeel" Click="Personeel_Click" />
 
 
-        </Menu>
+            </Menu>
         </DockPanel>
+        <Label Name="ProjectName" Visibility="Hidden" Content="Projectname" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="StartDate" Visibility="Hidden" Content="StartDate" HorizontalAlignment="Left" Margin="214,10,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="EndDate" Visibility="Hidden" Content="EndDate" HorizontalAlignment="Left" Margin="648,10,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="ProjectDuur" Visibility="Hidden" Content="Projectduur" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" Width="101"/>
     </Grid>
 
 </Window>
