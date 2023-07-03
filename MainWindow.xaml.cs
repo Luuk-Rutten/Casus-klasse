@@ -96,6 +96,7 @@ namespace Casus_klasse
                         btn.Width = MarginX*t.Dagen;
                         btn.Content =$"{t.StartDatum.Day.ToString()} - {t.EindDatum.Day.ToString()}";
                         btn.Click +=new RoutedEventHandler(Taak_aanpassen);
+                        t.TaakNaam=t.TaakNaam.Replace(" ","_");
                         btn.Name = t.TaakNaam;
                         btn.Height = 20;
                         btn.Margin = new Thickness(x-300+(MarginX*diffbetweentasks), y, 0, 0);

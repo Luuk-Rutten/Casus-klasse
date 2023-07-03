@@ -166,9 +166,6 @@ namespace Casus_klasse
                 }
             }
 
-
-
-
             if (TaakNaam.Text.Trim() == "" || TaakBeschrijving.Text.Trim() == "" || StartTime.Text == "" || FinishTime.Text == "")
             {
                 MessageBox.Show("Fill in all forms");
