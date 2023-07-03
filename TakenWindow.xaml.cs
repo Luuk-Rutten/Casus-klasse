@@ -192,7 +192,12 @@ namespace Casus_klasse
                 }
             }
 
-
+            T.TaakNaam = TaakNaam.Text;
+            if (Char.IsDigit(T.TaakNaam[0]))
+            {
+                MessageBox.Show("First character can not be a digit.");
+                save = false;
+            }
 
             if (TaakNaam.Text.Trim() == "" || TaakBeschrijving.Text.Trim() == "" || StartTime.Text == "" || FinishTime.Text == "")
             {
@@ -207,7 +212,7 @@ namespace Casus_klasse
                 //Taak opslaan samen met het project nog een keer
                 if (DateTime.Parse(StartTime.Text)<DateTime.Parse(FinishTime.Text))
                 {
-                    T.TaakNaam = TaakNaam.Text;
+
                     T.TaakBeschrijving = TaakBeschrijving.Text;
                     T.StartDatum = DateTime.Parse(StartTime.Text);
                     T.EindDatum = DateTime.Parse(FinishTime.Text);

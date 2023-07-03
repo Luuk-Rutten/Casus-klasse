@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Taak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaakNaam>t2</TaakNaam>
+  <TaakBeschrijving>t2</TaakBeschrijving>
+  <TaakMedewerkers />
+  <Dagen>1</Dagen>
+  <StartDatum>2023-07-05T00:00:00</StartDatum>
+  <EindDatum>2023-07-06T00:00:00</EindDatum>
+  <Dependency />
+  <TaakStarted>false</TaakStarted>
+  <TaakDone>false</TaakDone>
+  <ProjectName>My Project</ProjectName>
+</Taak>
