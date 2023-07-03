@@ -79,7 +79,10 @@ namespace Casus_klasse
                         }
                         Button btn = new Button();
                         btn.Content = "";
-                        x += MarginX*t.Dagen;
+                        if (diffbetweentasks>=0)
+                        {
+                            x += MarginX * t.Dagen;
+                        }
                         btn.Width = MarginX*t.Dagen;
                         btn.Content =$"{t.StartDatum.Day.ToString()} - {t.EindDatum.Day.ToString()}";
                         btn.Click +=new RoutedEventHandler(Taak_aanpassen);
@@ -105,7 +108,10 @@ namespace Casus_klasse
                         btn2.IsEnabled = false;
                         btn2.Margin = new Thickness(-650, y, 0, 0);
                         y += 50;
-                        x += (1100 / maxDays/2)*t.Dagen;
+                        if (diffbetweentasks>=0)
+                        {
+                            x += (1100 / maxDays / 2) * t.Dagen;
+                        }
                         ProjectGrid.Children.Add(btn2);
                         ProjectGrid.Children.Add(btn);
                         lastenddate = t.EindDatum;
