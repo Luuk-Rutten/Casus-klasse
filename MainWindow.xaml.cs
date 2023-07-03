@@ -69,6 +69,7 @@ namespace Casus_klasse
                     MarginX = 1100 / maxDays/2;
                     DateTime lastenddate=DateTime.MinValue;
                     int diffbetweentasks = 0;
+                    int lasttaakdagen = 0;
                     //Hier maken wij de knoppen aan voor de taken
                     foreach (Taak t in projectTaken)
                     {
@@ -79,10 +80,19 @@ namespace Casus_klasse
                         }
                         Button btn = new Button();
                         btn.Content = "";
-                        if (diffbetweentasks>=0)
+                        if (diffbetweentasks >= 0 && t.Dagen <= lasttaakdagen)
                         {
-                            x += MarginX * t.Dagen;
+
                         }
+                        else
+                        {
+                            x += MarginX * t.Dagen - (lasttaakdagen-t.Dagen);
+
+                        }
+                        //if (diffbetweentasks>=0)
+                        //{
+                        //    x += MarginX * t.Dagen;
+                        //}
                         btn.Width = MarginX*t.Dagen;
                         btn.Content =$"{t.StartDatum.Day.ToString()} - {t.EindDatum.Day.ToString()}";
                         btn.Click +=new RoutedEventHandler(Taak_aanpassen);
@@ -108,13 +118,18 @@ namespace Casus_klasse
                         btn2.IsEnabled = false;
                         btn2.Margin = new Thickness(-650, y, 0, 0);
                         y += 50;
-                        if (diffbetweentasks>=0)
+                        if (diffbetweentasks>=0 && t.Dagen<=lasttaakdagen)
                         {
-                            x += (1100 / maxDays / 2) * t.Dagen;
+
+                        }
+                        else
+                        {
+                            x += (1100 / maxDays/2) * t.Dagen-(lasttaakdagen - t.Dagen);
                         }
                         ProjectGrid.Children.Add(btn2);
                         ProjectGrid.Children.Add(btn);
                         lastenddate = t.EindDatum;
+                        lasttaakdagen =t.Dagen;
                     }
                 }
 

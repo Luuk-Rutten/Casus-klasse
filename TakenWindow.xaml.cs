@@ -150,32 +150,6 @@ namespace Casus_klasse
             List<Taak> Taken = TakenUitlezen();
             List<String> Overeenkomst = new List<string>();
 
-            if (CBTaakDone.IsChecked ?? true)
-            {
-                T.TaakDone = true;
-            }
-            else if(cTaak==null)
-            {
-                T.TaakDone = false;
-                //Check of de taak niet eerder begint dan een andere taak met dezelfde medewerker.
-                foreach (Taak taak in Taken)
-                {
-                    int StartDateDiff = (DateTime.Parse(StartTime.Text) - taak.StartDatum).Days;
-                    int FinishDateDiff = (DateTime.Parse(StartTime.Text) - taak.StartDatum).Days;
-                    if (StartDateDiff >= 0 && StartDateDiff < taak.Dagen)
-                    {
-                        Overeenkomst = TaakMWList.Intersect(taak.TaakMedewerkers).ToList();
-                        if (Overeenkomst.Count > 0)
-                        {
-                            MessageBox.Show("One or more people can not be planned for this task!");
-                            save = false;
-                            break;
-                        }
-                    }
-                }
-            }
-
-
 
             //Check om te kijken of alle andere taken al gedaan zijn
             if (CBTaakstarted.IsChecked??true && cTaak.Dependency.Count>0)
@@ -192,23 +166,59 @@ namespace Casus_klasse
                 }
             }
 
-            T.TaakNaam = TaakNaam.Text;
-            if (Char.IsDigit(T.TaakNaam[0]))
-            {
-                MessageBox.Show("First character can not be a digit.");
-                save = false;
-            }
+
+
 
             if (TaakNaam.Text.Trim() == "" || TaakBeschrijving.Text.Trim() == "" || StartTime.Text == "" || FinishTime.Text == "")
             {
                 MessageBox.Show("Fill in all forms");
+                save=false;
             }
-            else if (!save)
+
+            T.TaakNaam = TaakNaam.Text;
+            //Extra check die wij van te voren niet wisten.
+            if (save)
+            {
+                if (Char.IsDigit(T.TaakNaam[0]))
+                {
+                    MessageBox.Show("First character can not be a digit.");
+                    save = false;
+                }
+
+                if (CBTaakDone.IsChecked ?? true)
+                {
+                    T.TaakDone = true;
+                }
+                else if (cTaak == null)
+                {
+                    T.TaakDone = false;
+                    //Check of de taak niet eerder begint dan een andere taak met dezelfde medewerker.
+                    foreach (Taak taak in Taken)
+                    {
+                        int StartDateDiff = (DateTime.Parse(StartTime.Text) - taak.StartDatum).Days;
+                        int FinishDateDiff = (DateTime.Parse(StartTime.Text) - taak.StartDatum).Days;
+                        if (StartDateDiff >= 0 && StartDateDiff < taak.Dagen)
+                        {
+                            Overeenkomst = TaakMWList.Intersect(taak.TaakMedewerkers).ToList();
+                            if (Overeenkomst.Count > 0)
+                            {
+                                MessageBox.Show("One or more people can not be planned for this task!");
+                                save = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            if (!save)
             {
                 //Uitzonderingen toevoegen
             }
             else
             {
+
                 //Taak opslaan samen met het project nog een keer
                 if (DateTime.Parse(StartTime.Text)<DateTime.Parse(FinishTime.Text))
                 {
