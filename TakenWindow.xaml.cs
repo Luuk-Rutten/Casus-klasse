@@ -18,21 +18,25 @@ using static Casus_klasse.Create;
 using System.Xml;
 using System.Collections;
 using Accessibility;
+using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace Casus_klasse
 {
     /// <summary>
     /// Interaction logic for TakenWindow.xaml
     /// </summary>
+    
     public partial class TakenWindow : Window
     {
 
-
+        public Taak cTaak=new Taak();
         public TakenWindow(Taak? t)
         {
+            cTaak = t;
             InitializeComponent();
             Project cProject = ProjectUitlezen(Globals.SelectedProject);
-            //Wij gebruiken hetzelfde scherm om te bewerken/neiuw aan te maken dus wij moeten tijden het bewerken een aantal functionaliteiten aanpassen
+            //Wij gebruiken hetzelfde scherm om te bewerken/nieuw aan te maken dus wij moeten tijdens het bewerken een aantal functionaliteiten aanpassen
             if (t!=null)
             {
                 TaakNaam.Text = t.TaakNaam;
@@ -83,7 +87,7 @@ namespace Casus_klasse
                 }
                 foreach (Taak T in cProject.Taken)
                 {
-                    if (TakenAL.Items.Count==0)
+                    if (TakenAL.Items.Count==0 && T.TaakNaam != cTaak.TaakNaam)
                     {
                         TakenLB.Items.Add(T.TaakNaam);
                     }
@@ -91,7 +95,7 @@ namespace Casus_klasse
                     {
                         foreach (string item in TakenAL.Items)
                         {
-                            if (item != T.TaakNaam)
+                            if (item != T.TaakNaam && T.TaakNaam!=cTaak.TaakNaam)
                             {
                                 TakenLB.Items.Add(T.TaakNaam);
                             }
@@ -101,6 +105,10 @@ namespace Casus_klasse
             }
             else
             {
+                CBTaakstarted.Visibility = Visibility.Hidden;
+                BTNDel.Visibility = Visibility.Hidden;
+                LBTakenAL.Visibility = Visibility.Hidden;
+                TakenAL.Visibility = Visibility.Hidden;
                 List<Taak> Taken = TakenUitlezen();
                 foreach (Taak T in cProject.Taken)
                 {
@@ -146,7 +154,7 @@ namespace Casus_klasse
             {
                 T.TaakDone = true;
             }
-            else
+            else if(cTaak==null)
             {
                 T.TaakDone = false;
                 //Check of de taak niet eerder begint dan een andere taak met dezelfde medewerker.
@@ -169,18 +177,19 @@ namespace Casus_klasse
 
 
 
-            //TODO Check om te kijken of alle andere taken al gedaan zijn
-            if (CBTaakstarted.IsChecked??true)
+            //Check om te kijken of alle andere taken al gedaan zijn
+            if (CBTaakstarted.IsChecked??true && cTaak.Dependency.Count>0)
             {
-                //foreach (string s in )
-                //{
-                //    Taak taak = TaakUitlezen(s);
-                //    if (!taak.TaakDone)
-                //    {
-                //        save = false; 
-                //        break;
-                //    }
-                //}
+                Project P = ProjectUitlezen(Globals.SelectedProject);
+                foreach (string s in cTaak.Dependency)
+                {
+                    Taak taak = TaakUitlezen(s);
+                    if (!taak.TaakDone)
+                    {
+                        MessageBox.Show($"Dependent task is not yet completed {taak.TaakNaam}");
+                        save = false;
+                    }
+                }
             }
 
 
@@ -296,6 +305,29 @@ namespace Casus_klasse
                 }
             }
 
+        }
+
+        //Taak verwijderen
+        private void Verwijder_taak(object sender, RoutedEventArgs e)
+        {
+            Project cProject = ProjectUitlezen(Globals.SelectedProject);
+            cProject.ProjectBeschrijving = cProject.ProjectBeschrijving;
+            cProject.ProjectNaam = cProject.ProjectNaam;
+            foreach (Taak PT in cProject.Taken)
+            {
+                if (PT.TaakNaam == cTaak.TaakNaam)
+                {
+                    cProject.Taken.Remove(PT);
+                    break;
+                }
+            }
+            File.Delete($"../../../{FilePath}/Taken/{cTaak.TaakNaam}.xml");
+            Opslaan(cProject, null, null);
+            MainWindow P = new MainWindow();
+            P.Left = Width / 2;
+            P.Top = Height / 2;
+            P.Show();
+            this.Close();
         }
     }
 }

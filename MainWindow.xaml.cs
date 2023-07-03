@@ -64,7 +64,7 @@ namespace Casus_klasse
                     ProjectDuur.Content = maxDays;
                     ProjectDuur.Visibility = Visibility.Visible;
                     //Voor de styling
-                    MarginX = 1200 / maxDays/2;
+                    MarginX = 1100 / maxDays/2;
                     DateTime lastenddate=DateTime.MinValue;
                     int diffbetweentasks = 0;
                     //Hier maken wij de knoppen aan voor de taken
@@ -79,8 +79,9 @@ namespace Casus_klasse
                         btn.Content = "";
                         x += MarginX*t.Dagen;
                         btn.Width = MarginX*t.Dagen;
-                        btn.Content =t.TaakNaam;
+                        btn.Content =$"{t.StartDatum.Day.ToString()} - {t.EindDatum.Day.ToString()}";
                         btn.Click +=new RoutedEventHandler(Taak_aanpassen);
+                        btn.Name = t.TaakNaam;
                         btn.Height = 20;
                         btn.Margin = new Thickness(x-300+(MarginX*diffbetweentasks), y, 0, 0);
                         if (t.TaakStarted && !t.TaakDone)
@@ -102,7 +103,7 @@ namespace Casus_klasse
                         btn2.IsEnabled = false;
                         btn2.Margin = new Thickness(-650, y, 0, 0);
                         y += 50;
-                        x += (1200 / maxDays/2)*t.Dagen;
+                        x += (1100 / maxDays/2)*t.Dagen;
                         ProjectGrid.Children.Add(btn2);
                         ProjectGrid.Children.Add(btn);
                         lastenddate = t.EindDatum;
@@ -114,7 +115,7 @@ namespace Casus_klasse
         //Scherm naar taak aanpassen
         private void Taak_aanpassen(object sender, EventArgs e)
         {
-            string btnname = (sender as Button).Content.ToString();
+            string btnname = (sender as Button).Name;
             Taak t = TaakUitlezen(btnname);
             TakenWindow T = new TakenWindow(t);
             T.Left = Width / 2;

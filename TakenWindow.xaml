@@ -21,7 +21,7 @@
         <ListBox x:Name="AvailableWN" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="66,187,586,162" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding ItemBindingGroup, ElementName=LbTaken1}"/>
         <DatePicker x:Name="StartTime" HorizontalAlignment="Left" Margin="552,84,0,0" VerticalAlignment="Top" Text="StartDatum"/>
         <DatePicker x:Name="FinishTime" HorizontalAlignment="Left" Margin="552,145,0,0" VerticalAlignment="Top" Text="EindDatum"/>
-        <Button Content="Terug" HorizontalAlignment="Left" Margin="583,336,0,0" VerticalAlignment="Top" Click="CancelBttn" />
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="536,336,0,0" VerticalAlignment="Top" Click="CancelBttn" />
         <Button Content="Opslaan" HorizontalAlignment="Left" Margin="651,336,0,0" VerticalAlignment="Top" Click="COpslaanTaak"/>
         <ListBox x:Name="AddedWN" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,187,361,162" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="False"/>
         <Label Visibility="Hidden" Content="=>" HorizontalAlignment="Left" Margin="221,212,0,0" VerticalAlignment="Top" Height="22" Width="31"/>
@@ -37,6 +37,7 @@
         <CheckBox Name="CBTaakstarted" Content="Taak started" HorizontalAlignment="Left" Margin="552,192,0,0" VerticalAlignment="Top" Width="102" />
         <CheckBox Name="CBTaakDone" Content="Taak done" Visibility="Hidden" HorizontalAlignment="Left" Margin="552,215,0,0" VerticalAlignment="Top" Width="102" />
         <ListBox Name="TakenAL" IsEnabled="False" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="291,305,361,43" SelectionMode="Multiple" IsSynchronizedWithCurrentItem="False" ItemsSource="{Binding ItemBindingGroup, ElementName=LbTaken1}"/>
-        <Label Content="Al togevoegd" HorizontalAlignment="Left" Margin="291,279,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label Name="LBTakenAL" Content="Al togevoegd" HorizontalAlignment="Left" Margin="291,279,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button Name="BTNDel" Content="Delete" HorizontalAlignment="Left" Margin="592,336,0,0" VerticalAlignment="Top" Click="Verwijder_taak"/>
     </Grid>
 </Window>
