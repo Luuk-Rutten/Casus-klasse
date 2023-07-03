@@ -27,10 +27,12 @@
 
             </Menu>
         </DockPanel>
-        <Label Name="ProjectName" Visibility="Hidden" Content="Projectname" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="101"/>
-        <Label Name="StartDate" Visibility="Hidden" Content="StartDate" HorizontalAlignment="Left" Margin="214,10,0,0" VerticalAlignment="Top" Width="101"/>
-        <Label Name="EndDate" Visibility="Hidden" Content="EndDate" HorizontalAlignment="Left" Margin="648,10,0,0" VerticalAlignment="Top" Width="101"/>
-        <Label Name="ProjectDuur" Visibility="Hidden" Content="Projectduur" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="ProjectName" Visibility="Hidden" Content="Projectname" HorizontalAlignment="Left" Margin="12,23,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="StartDate" Visibility="Hidden" Content="StartDate" HorizontalAlignment="Left" Margin="224,23,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="EndDate" Visibility="Hidden" Content="EndDate" HorizontalAlignment="Left" Margin="645,23,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="ProjectDuur" Visibility="Hidden" Content="Projectduur" HorizontalAlignment="Left" Margin="118,23,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Name="ProjectDuurDagen" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="118,38,0,0" VerticalAlignment="Top" />
+        <Label Name="ProjectDescription" Visibility="Visible" Content="" HorizontalAlignment="Left" Margin="12,38,0,0" VerticalAlignment="Top" Width="130" Height="60"/>
     </Grid>
 
 </Window>

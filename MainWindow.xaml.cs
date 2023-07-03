@@ -39,8 +39,9 @@ namespace Casus_klasse
                 ProjectName.Content = Globals.SelectedProject;
                 ProjectName.Visibility = Visibility.Visible;
                 Project cProject = ProjectUitlezen(Globals.SelectedProject);
+                ProjectDescription.Content = cProject.ProjectBeschrijving;
                 //Aantal parameters aanmaken voor later
-                int y = -300;
+                int y = -200;
                 int x = 0;
                 int MarginX = 0;
                 int maxDays = 0;
@@ -61,7 +62,8 @@ namespace Casus_klasse
                     EndDate.Visibility = Visibility.Visible;
                     //Bereken aantal dagen die het project nodig heeft
                     maxDays += (projectTaken[projectTaken.Count - 1].EindDatum-projectTaken[0].StartDatum).Days;
-                    ProjectDuur.Content = maxDays;
+                    ProjectDuurDagen.Content = $"{maxDays} dagen";
+                    ProjectDuurDagen.Visibility = Visibility.Visible;
                     ProjectDuur.Visibility = Visibility.Visible;
                     //Voor de styling
                     MarginX = 1100 / maxDays/2;
