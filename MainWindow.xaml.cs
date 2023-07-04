@@ -42,10 +42,11 @@ namespace Casus_klasse
                 ProjectDescription.Content = cProject.ProjectBeschrijving;
                 //Aantal parameters aanmaken voor later
                 int y = -200;
-                int x = 0;
-                int MarginX = 0;
+                int x = 200;
+                int Unit = 0;
                 int maxDays = 0;
                 List<Taak> projectTaken= new List<Taak>();
+                List<Taak> projectTakenREV = new List<Taak>();
                 if (cProject.Taken.Count!=0)
                 {
                     //Hier soorteren wij de taken by date
@@ -53,53 +54,41 @@ namespace Casus_klasse
                     {
                         projectTaken.Add(t);
                         projectTaken = projectTaken.OrderBy(t => t.StartDatum).ToList();
-
+                        projectTakenREV.Add(t);
+                        projectTakenREV = projectTakenREV.OrderBy(t=>t.EindDatum).ToList();
                     }
                     //Wij hebben nu een project ingeladen dus wij zetten alle data weer op zichtbaar
                     StartDate.Content = projectTaken[0].StartDatum.Date;
                     StartDate.Visibility = Visibility.Visible;
-                    EndDate.Content = projectTaken[projectTaken.Count-1].EindDatum.Date;
+                    EndDate.Content = projectTakenREV[projectTaken.Count - 1].EindDatum.Date;
                     EndDate.Visibility = Visibility.Visible;
+                    ProjectStart.Visibility = Visibility.Visible;
+                    ProjectEind.Visibility = Visibility.Visible;
                     //Bereken aantal dagen die het project nodig heeft
-                    maxDays += (projectTaken[projectTaken.Count - 1].EindDatum-projectTaken[0].StartDatum).Days;
+                    maxDays = (projectTakenREV[projectTaken.Count-1].EindDatum-projectTaken[0].StartDatum).Days;
                     ProjectDuurDagen.Content = $"{maxDays} dagen";
                     ProjectDuurDagen.Visibility = Visibility.Visible;
                     ProjectDuur.Visibility = Visibility.Visible;
                     //Voor de styling
-                    MarginX = 1100 / maxDays/2;
-                    DateTime lastenddate=DateTime.MinValue;
-                    int diffbetweentasks = 0;
-                    int lasttaakdagen = 0;
+                    Unit = 1100 / maxDays/2;
+                    DateTime FirstDate = projectTaken[0].StartDatum;
+                    int dagen = 0;
+                    int MarginDagen = 0;
                     //Hier maken wij de knoppen aan voor de taken
                     foreach (Taak t in projectTaken)
                     {
-                        if (lastenddate != DateTime.MinValue)
-                        {
-                            diffbetweentasks = (t.StartDatum-lastenddate).Days;
-
-                        }
                         Button btn = new Button();
-                        btn.Content = "";
-                        if (diffbetweentasks >= 0 && t.Dagen <= lasttaakdagen)
-                        {
-
-                        }
-                        else
-                        {
-                            x += MarginX * t.Dagen - (lasttaakdagen-t.Dagen);
-
-                        }
-                        //if (diffbetweentasks>=0)
-                        //{
-                        //    x += MarginX * t.Dagen;
-                        //}
-                        btn.Width = MarginX*t.Dagen;
+                        MarginDagen = (t.StartDatum-FirstDate).Days;
+                        dagen = (t.EindDatum-t.StartDatum).Days;
+                        //btn.Width = Unit;
+                        btn.Width = Unit * dagen;
                         btn.Content =$"{t.StartDatum.Day.ToString()} - {t.EindDatum.Day.ToString()}";
                         btn.Click +=new RoutedEventHandler(Taak_aanpassen);
                         t.TaakNaam=t.TaakNaam.Replace(" ","_");
                         btn.Name = t.TaakNaam;
                         btn.Height = 20;
-                        btn.Margin = new Thickness(x-300+(MarginX*diffbetweentasks), y, 0, 0);
+                        btn.HorizontalAlignment = HorizontalAlignment.Left;
+                        btn.Margin = new Thickness(x+(Unit*MarginDagen), y, 0, 0);
                         if (t.TaakStarted && !t.TaakDone)
                         {
                             btn.Background = Brushes.Yellow;
@@ -119,18 +108,8 @@ namespace Casus_klasse
                         btn2.IsEnabled = false;
                         btn2.Margin = new Thickness(-650, y, 0, 0);
                         y += 50;
-                        if (diffbetweentasks>=0 && t.Dagen<=lasttaakdagen)
-                        {
-
-                        }
-                        else
-                        {
-                            x += (1100 / maxDays/2) * t.Dagen-(lasttaakdagen - t.Dagen);
-                        }
                         ProjectGrid.Children.Add(btn2);
                         ProjectGrid.Children.Add(btn);
-                        lastenddate = t.EindDatum;
-                        lasttaakdagen =t.Dagen;
                     }
                 }
 

@@ -173,6 +173,7 @@ namespace Casus_klasse
             }
 
             T.TaakNaam = TaakNaam.Text;
+            T.TaakNaam = T.TaakNaam.Replace(" ", "_");
             //Extra check die wij van te voren niet wisten.
             if (save)
             {
