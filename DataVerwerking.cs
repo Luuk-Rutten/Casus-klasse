@@ -64,12 +64,6 @@ namespace Casus_klasse
 
         }
 
-        public static void Verwijderen()
-        {
-
-
-        }
-
         //Project uitlezen
         public static Project ProjectUitlezen(string cNaam)
         {
@@ -126,17 +120,6 @@ namespace Casus_klasse
             }
             return t;
         }
-        /*        public static List<String> GetProjecten ()
-                {
-                    List<String> FileNames = new List<String>();
-                    DirectoryInfo d = new DirectoryInfo($"..{FilePath}");
-                    FileInfo[] Files = d.GetFiles("*.xml");
-                    foreach (FileInfo file in Files)
-                    {
-                        FileNames.Add(file.Name);
-                    }
-                    return FileNames;
-                }*/
 
     }
 

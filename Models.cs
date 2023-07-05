@@ -48,17 +48,6 @@ namespace Casus_klasse
             public bool TaakDone { get; set; }
             public string ProjectName { get; set; }
         }
-
-
-        public void OpenTaak()
-        {
-
-
-        }
-
-
-      
-
     }
 
 }
